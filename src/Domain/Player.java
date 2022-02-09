@@ -1,4 +1,6 @@
-package ADT;
+package Domain;
+
+import Domain.Character;
 
 public class Player {
 	private String userName;

@@ -2,6 +2,7 @@ package GUI;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -10,6 +11,7 @@ public class StartPanel extends JPanel{
 	
 	public StartPanel() { 
         this.setSize(580, 750);
+        
     }
 
  

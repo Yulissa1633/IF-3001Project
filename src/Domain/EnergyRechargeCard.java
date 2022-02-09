@@ -1,6 +1,8 @@
-package ADT;
+package Domain;
 
 import java.awt.image.BufferedImage;
+
+import Domain.Card;
 
 public class EnergyRechargeCard extends Card{
 

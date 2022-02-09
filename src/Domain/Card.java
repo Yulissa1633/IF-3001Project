@@ -1,4 +1,4 @@
-package ADT;
+package Domain;
 
 import java.awt.image.BufferedImage;
 
