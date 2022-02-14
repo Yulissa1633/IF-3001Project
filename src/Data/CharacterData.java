@@ -33,22 +33,22 @@ public class CharacterData {
 	public SLinkedList createCharacter() {
 		
 		try {
-			skinLoki=ImageIO.read(getClass().getResourceAsStream("/Assets/loki.png"));
-			skinOdin=ImageIO.read(getClass().getResourceAsStream("/Assets/odin.png"));
-			skinThor=ImageIO.read(getClass().getResourceAsStream("/Assets/thor.png"));
-			skinSkade=ImageIO.read(getClass().getResourceAsStream("/Assets/skade.png"));
+			skinLoki=ImageIO.read(getClass().getResourceAsStream("/Assets/Loki.png"));
+			skinOdin=ImageIO.read(getClass().getResourceAsStream("/Assets/Odin.png"));
+			skinThor=ImageIO.read(getClass().getResourceAsStream("/Assets/Thor.png"));
+			skinSkade=ImageIO.read(getClass().getResourceAsStream("/Assets/Skade.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		character = new Character("loki", skinLoki, 1);
+		character = new Character("Loki", skinLoki, 1);
 		s.addFirst(new Node(character));
-		character = new Character("odin", skinOdin, 2);
+		character = new Character("Odin", skinOdin, 2);
 		s.addFirst(new Node(character));
-		character = new Character("thor", skinThor, 3);
+		character = new Character("Thor", skinThor, 3);
 		s.addFirst(new Node(character));
-		character = new Character("skade", skinSkade, 4);
+		character = new Character("Skade", skinSkade, 4);
 		s.addFirst(new Node(character));
 		
 		return s;

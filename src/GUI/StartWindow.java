@@ -1,7 +1,6 @@
 package GUI;
 
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -45,7 +44,6 @@ public class StartWindow extends JFrame{
 	private StartPanel welcomeArea;
 	private StartPanel loginArea;
 	private StartPanel registerArea;
-	private StartPanel selectCharacterArea;
 	private BufferedImage logo;
 	private BufferedImage title;
 	private BufferedImage loginButtonSkin;
@@ -79,6 +77,7 @@ public class StartWindow extends JFrame{
 	public StartWindow() {
 		this.setSize(580, 750);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
 		this.setLayout(null);	
 		
 		try {
@@ -215,6 +214,18 @@ public class StartWindow extends JFrame{
             }
           });
 		
+		this.registerButton = new JButton(new ImageIcon(registerButtonSkin));
+		this.loginArea.add(registerButton);
+		registerButton.setBounds(209,520,150,33);
+		registerButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	loginArea.setVisible(false);
+            	registerArea.setVisible(true);
+            }
+          });
+		
 		//-------------Sección de Registro-----------------
 		this.registerArea = new StartPanel();
 		this.registerArea.setLayout(null);
@@ -299,6 +310,18 @@ public class StartWindow extends JFrame{
                             labelMessage2.setVisible(true);
 
                     	}
+            }
+          });
+		
+		this.loginButton = new JButton(new ImageIcon(loginButtonSkin));
+		this.registerArea.add(loginButton);
+		loginButton.setBounds(209,590,150,33);
+		loginButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	registerArea.setVisible(false);
+            	loginArea.setVisible(true);
             }
           });
 		
