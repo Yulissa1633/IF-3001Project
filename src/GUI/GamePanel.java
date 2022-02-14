@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 public class GamePanel extends JPanel{
 
 	public GamePanel() { 
-        this.setSize(1136, 936);    
+		this.setSize(1400, 800);  
     }
 
  
