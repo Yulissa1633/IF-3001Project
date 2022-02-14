@@ -6,11 +6,13 @@ public class Character {
 	
 	private String name;
 	private BufferedImage skin;
+	private int id;
 	
-	public Character(String name, BufferedImage skin) {
+	public Character(String name, BufferedImage skin, int id) {
 		super();
 		this.name = name;
 		this.skin = skin;
+		this.id = id;
 	}
 
 	public String getName() {
@@ -27,6 +29,14 @@ public class Character {
 
 	public void setSkin(BufferedImage skin) {
 		this.skin = skin;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

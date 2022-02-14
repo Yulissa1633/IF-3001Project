@@ -5,16 +5,17 @@ import Domain.Character;
 public class Player {
 	private String userName;
 	private String password;
-	private Character character;
+	private int idCharacter;
 	private int coins;
 	
-	public Player(String userName, String password, Character character, int coins) {
-		super();
+	public Player(String userName, String password, int idCharacter, int coins) {
 		this.userName = userName;
 		this.password = password;
-		this.character = character;
+		this.idCharacter = idCharacter;
 		this.coins = coins;
 	}
+	
+	public Player(){ super(); }
 
 	public String getUserName() {
 		return userName;
@@ -32,12 +33,12 @@ public class Player {
 		this.password = password;
 	}
 
-	public Character getCharacter() {
-		return character;
+	public int getIdCharacter() {
+		return idCharacter;
 	}
 
-	public void setCharacter(Character character) {
-		this.character = character;
+	public void setIdCharacter(int idCharacter) {
+		this.idCharacter = idCharacter;
 	}
 
 	public int getCoins() {
@@ -46,8 +47,6 @@ public class Player {
 
 	public void setCoins(int coins) {
 		this.coins = coins;
-	}
+	}	
 	
-	
-
 }
