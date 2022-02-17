@@ -38,6 +38,8 @@ public class GameWindowOne extends JFrame {
 	private JButton deckButton;
 	
 	private GamePanel principalArea;
+	private CardsZonePanel cardsZone;
+	private AttackZonePanel atkZone;
 	private CharacterBusiness chaBusiness = new CharacterBusiness();
 
 	public GameWindowOne(String userName) {
@@ -46,7 +48,7 @@ public class GameWindowOne extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setLayout(null);
 		this.userName = userName;
-		this.setTitle("Jugador 1: "+userName);
+		this.setTitle("Jugador: "+userName);
 		this.chaBusiness.createCharacter();
 		this.characterName = this.chaBusiness.findNameCharacter(chaBusiness.getPlayerCharacter(userName));
 		
@@ -141,95 +143,17 @@ public class GameWindowOne extends JFrame {
             }
           });
 		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(265,350,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
+		this.cardsZone = new CardsZonePanel();
+		cardsZone.setBounds(240,345,1100,310);
+		this.add(cardsZone);
 		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(480,350,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
+		this.atkZone = new AttackZonePanel();
+		atkZone.setBounds(550,20,700,310);
+		this.add(atkZone);
 		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(695,350,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
-		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(910,350,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
-		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(1125,350,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
-		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(600,20,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
-		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(815,20,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
-		
-		this.deckButton = new JButton(new ImageIcon(deckButtonSkin));
-		this.principalArea.add(deckButton);
-		deckButton.setBounds(1030,20,198,300);
-		deckButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Sacar una carta del mazo
-            }
-          });
 		
 		this.add(principalArea);
+		
 	}
 	
 }

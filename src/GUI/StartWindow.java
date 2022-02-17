@@ -72,7 +72,7 @@ public class StartWindow extends JFrame{
 	private PlayerBusiness playerBusiness = new PlayerBusiness();
 	private CharacterBusiness chaBusiness = new CharacterBusiness();
 	private GameWindowOne gW;
-	private GameWindowTwo gW2;
+	private GameWindowOne gW2;
 
 	public StartWindow() {
 		this.setSize(580, 750);
@@ -198,7 +198,7 @@ public class StartWindow extends JFrame{
                 	}
                 	else {  
                 		if(windowOneOn) {
-                			gW2 = new GameWindowTwo(texfieldUser.getText());
+                			gW2 = new GameWindowOne(texfieldUser.getText());
                 			gW2.setResizable(false);
 	                        gW2.setVisible(true);
                 		}
