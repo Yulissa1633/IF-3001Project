@@ -1,4 +1,4 @@
-package ADT;
+package Domain.SLinkedList;
 
 public class Node {
     public Object element; 

@@ -7,10 +7,10 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import ADT.Node;
 import ADT.SLinkedList;
 import Data.CharacterData;
 import Domain.Character;
+import Domain.SLinkedList.Node;
 
 public class CharacterBusiness {
 	

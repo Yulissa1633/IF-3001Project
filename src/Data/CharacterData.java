@@ -9,10 +9,10 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import ADT.ListException;
-import ADT.Node;
 import ADT.SLinkedList;
 import Domain.Character;
+import Domain.SLinkedList.ListException;
+import Domain.SLinkedList.Node;
 
 public class CharacterData {
 

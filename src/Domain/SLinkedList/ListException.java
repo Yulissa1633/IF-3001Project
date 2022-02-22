@@ -1,4 +1,4 @@
-package ADT;
+package Domain.SLinkedList;
 
 public class ListException extends Exception{
 	 

@@ -12,11 +12,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import com.fasterxml.jackson.core.json.async.NonBlockingJsonParserBase;
-
 import Business.CharacterBusiness;
+import Business.SoundBusiness;
 
-public class GameWindowOne extends JFrame {
+public class GameWindow extends JFrame {
 	
 	private BufferedImage labeldBackSkin;
 	private BufferedImage characterSkin;
@@ -37,17 +36,20 @@ public class GameWindowOne extends JFrame {
 	private JButton launchATKButton;
 	private JButton deckButton;
 	
+	private int player;
 	private GamePanel principalArea;
 	private CardsZonePanel cardsZone;
 	private AttackZonePanel atkZone;
 	private CharacterBusiness chaBusiness = new CharacterBusiness();
+	private SoundBusiness soundBusiness = new SoundBusiness();
 
-	public GameWindowOne(String userName) {
+	public GameWindow(String userName, int player) {
 		this.setSize(1400, 800);  
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setLayout(null);
 		this.userName = userName;
+		this.player = player;
 		this.setTitle("Jugador: "+userName);
 		this.chaBusiness.createCharacter();
 		this.characterName = this.chaBusiness.findNameCharacter(chaBusiness.getPlayerCharacter(userName));
@@ -95,24 +97,15 @@ public class GameWindowOne extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-            	//lanza dados
-            }
-          });
-		
-		this.shuffleButton = new JButton(new ImageIcon(shuffleButtonSkin));
-		this.principalArea.add(shuffleButton);
-		shuffleButton.setBounds(260,120,150,33);
-		shuffleButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	//Barajar mazo
+            	DicesWindow dicesWindow = new DicesWindow(characterSkin);
+            	soundBusiness.playDiceSoud();
+            	dicesWindow.setVisible(true);
             }
           });
 		
 		this.cleanATKAreaButton = new JButton(new ImageIcon(cleanATKAreaButtonSkin));
 		this.principalArea.add(cleanATKAreaButton);
-		cleanATKAreaButton.setBounds(260,160,150,33);
+		cleanATKAreaButton.setBounds(260,120,150,33);
 		cleanATKAreaButton.addActionListener(new ActionListener() {
 
             @Override
@@ -123,12 +116,13 @@ public class GameWindowOne extends JFrame {
 		
 		this.launchATKButton = new JButton(new ImageIcon(launchATKButtonSkin));
 		this.principalArea.add(launchATKButton);
-		launchATKButton.setBounds(260,200,150,33);
+		launchATKButton.setBounds(260,160,150,33);
 		launchATKButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
             	//Lanzar ataque
+            	
             }
           });
 		
@@ -155,5 +149,7 @@ public class GameWindowOne extends JFrame {
 		this.add(principalArea);
 		
 	}
+	
+	
 	
 }

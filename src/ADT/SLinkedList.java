@@ -1,6 +1,8 @@
 package ADT;
 
-import Business.ListBusiness;
+import Business.ADTBusiness;
+import Domain.SLinkedList.ListException;
+import Domain.SLinkedList.Node;
 
 public class SLinkedList {
 	
@@ -70,7 +72,7 @@ public class SLinkedList {
         Node aux = head;
            
         
-            while(!ListBusiness.equals(aux.element, element2.getData())&&aux.next!=null){     
+            while(!ADTBusiness.equals(aux.element, element2.getData())&&aux.next!=null){     
                 aux = aux.next;
             }
             
@@ -88,7 +90,7 @@ public class SLinkedList {
 		Node exist = element2;
         Node aux = head;
            
-            while(!ListBusiness.equals(aux.element, element2.getData())&&aux.next!=null){
+            while(!ADTBusiness.equals(aux.element, element2.getData())&&aux.next!=null){
                 aux = aux.next;
             }
            
@@ -140,12 +142,12 @@ public class SLinkedList {
 		if(this.isEmpty()){
             throw new ListException("Singly Linked List is Empty");
         }      
-        if(ListBusiness.equals(head.element, element)){
+        if(ADTBusiness.equals(head.element, element)){
             return "Es el inicio, no tiene anterior";
         }        
         Node aux = head;
         while(aux.next!=null){
-            if(ListBusiness.equals(aux.next.element, element)){
+            if(ADTBusiness.equals(aux.next.element, element)){
                 return aux.element;
             }
             aux = aux.next;
@@ -159,7 +161,7 @@ public class SLinkedList {
         }
         Node aux = head;
         while(aux!=null){
-            if(ListBusiness.equals(aux.element, element)){
+            if(ADTBusiness.equals(aux.element, element)){
                 if(aux.next!=null){
                     return aux.next.element;
                 }else{

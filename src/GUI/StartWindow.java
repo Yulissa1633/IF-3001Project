@@ -71,8 +71,8 @@ public class StartWindow extends JFrame{
 	
 	private PlayerBusiness playerBusiness = new PlayerBusiness();
 	private CharacterBusiness chaBusiness = new CharacterBusiness();
-	private GameWindowOne gW;
-	private GameWindowOne gW2;
+	private GameWindow gW;
+	private GameWindow gW2;
 
 	public StartWindow() {
 		this.setSize(580, 750);
@@ -198,14 +198,15 @@ public class StartWindow extends JFrame{
                 	}
                 	else {  
                 		if(windowOneOn) {
-                			gW2 = new GameWindowOne(texfieldUser.getText());
+                			gW2 = new GameWindow(texfieldUser.getText(), 2);
                 			gW2.setResizable(false);
 	                        gW2.setVisible(true);
+	                       
                 		}
                 		else {
-	                        gW = new GameWindowOne(texfieldUser.getText());                  
+	                        gW = new GameWindow(texfieldUser.getText(), 1);                  
 	                        gW.setResizable(false);
-	                        gW.setVisible(true);
+	                        gW.setVisible(true);	                     
 	                        windowOneOn = true;	                    
                 		}
                 		texfieldUser.setText("");
